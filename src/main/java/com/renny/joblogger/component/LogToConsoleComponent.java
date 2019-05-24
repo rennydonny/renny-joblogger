@@ -1,16 +1,12 @@
 package com.renny.joblogger.component;
 
 import com.renny.joblogger.LoggerProperties;
-import com.renny.joblogger.dtos.LogMessageDTO;
+import com.renny.joblogger.dto.LogMessageDTO;
 import com.renny.joblogger.model.LogLevel;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-import java.nio.file.DirectoryStream;
-import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.logging.*;
 

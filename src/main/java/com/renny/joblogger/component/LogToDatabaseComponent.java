@@ -2,7 +2,7 @@ package com.renny.joblogger.component;
 
 import com.renny.joblogger.LoggerProperties;
 import com.renny.joblogger.domain.LoggerEntity;
-import com.renny.joblogger.dtos.LogMessageDTO;
+import com.renny.joblogger.dto.LogMessageDTO;
 import com.renny.joblogger.model.LogLevel;
 import com.renny.joblogger.repository.LoggerRepository;
 import lombok.RequiredArgsConstructor;

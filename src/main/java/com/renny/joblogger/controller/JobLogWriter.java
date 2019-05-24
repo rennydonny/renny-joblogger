@@ -1,16 +1,16 @@
 package com.renny.joblogger.controller;
 
 import com.renny.joblogger.api.JobLoggerService;
-import com.renny.joblogger.dtos.LogMessageDTO;
+import com.renny.joblogger.dto.LogMessageDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 
-@RestController(value = "log")
+@RestController
+@RequestMapping(value = "log",
+        produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 @Log
 @RequiredArgsConstructor
 public class JobLogWriter {

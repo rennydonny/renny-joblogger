@@ -2,7 +2,7 @@ package com.renny.joblogger.api;
 
 import com.renny.joblogger.LoggerProperties;
 import com.renny.joblogger.component.OutputLoggerFactory;
-import com.renny.joblogger.dtos.LogMessageDTO;
+import com.renny.joblogger.dto.LogMessageDTO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.stereotype.Service;

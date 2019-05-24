@@ -1,4 +1,4 @@
-package com.renny.joblogger.dtos;
+package com.renny.joblogger.dto;
 
 import com.renny.joblogger.model.LogLevel;
 import lombok.AllArgsConstructor;
