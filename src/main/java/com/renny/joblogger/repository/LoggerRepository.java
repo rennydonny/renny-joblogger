@@ -11,14 +11,5 @@ import java.util.List;
 /**
  * Created by renrodriguez on 5/3/2016.
  */
-@Repository
-public interface LoggerRepository extends JpaRepository<LoggerEntity,Long>{
-
-    LoggerEntity findByMessage(String message);
-
-    @Cacheable("loggers")
-    List<LoggerEntity> findAll();
-
-    @CacheEvict(value = "loggers", allEntries = true)
-    LoggerEntity save(LoggerEntity loggerEntity);
+public interface LoggerRepository extends JpaRepository<LoggerEntity, Long> {
 }
