@@ -1,0 +1,24 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+  application:
+    name: joblogger
+  jpa:
+    show-sql: true
+server:
+  port: 8080
+  servlet:
+    context-path: /${spring.application.name}/api
+logger:
+  levels:
+    - error
+    - message
+    - warn
+  outputs:
+    - console
+    - database
+    - file
+logging:
+  file: target/logs/${spring.application.name}.log

@@ -1,21 +1,17 @@
-package com.renny.joblogger.enums;
+package com.renny.joblogger.model;
 
 import java.util.logging.Level;
 
-/**
- * Created by renrodriguez on 5/3/2016.
- */
-public enum LogLevelTypes {
-
+public enum LogLevel {
     WARN("3","warning", Level.WARNING),
-    ERROR("2","error",Level.ALL),
-    INFO("1","message",Level.INFO);
+    ERROR("2","error",Level.SEVERE),
+    MESSAGE("1","message",Level.INFO);
 
     private String category;
     private String description;
     private Level level;
 
-    LogLevelTypes(String category,String description, Level level) {
+    LogLevel(String category,String description, Level level) {
         this.category = category;
         this.description = description;
         this.level = level;
@@ -27,7 +23,6 @@ public enum LogLevelTypes {
     public String getDescription(){
         return description;
     }
-
     public Level getLevel() {
         return level;
     }

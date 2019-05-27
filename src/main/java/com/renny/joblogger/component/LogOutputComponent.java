@@ -1,9 +1,7 @@
 package com.renny.joblogger.component;
 
-/**
- * Created by renrodriguez on 5/3/2016.
- */
-public interface LogOutputComponent {
+import com.renny.joblogger.dto.LogMessageDTO;
 
-    void writeLog(String message, String logLevel) throws Exception;
+public interface LogOutputComponent {
+    void push(LogMessageDTO logMessage);
 }
