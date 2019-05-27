@@ -16,9 +16,6 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
 
-/**
- * Created by renrodriguez on 5/3/2016.
- */
 @Component("logToFileComponent")
 @Log
 @RequiredArgsConstructor
@@ -31,16 +28,18 @@ public class LogToFileComponent implements LogOutputComponent {
     @Override
     public void push(LogMessageDTO logMessage) {
         Predicate<Level> isLogLevelEnabled = (Level logLevel) -> logLevel.equals(logMessage.getLevel().getLevel());
-        if(Objects.nonNull(getHandlerType())){
-            log.addHandler(getHandlerType());
+        Handler handlerType = getHandlerType();
+        if(Objects.nonNull(handlerType)){
+            log.addHandler(handlerType);
             this.loggerProperties.getLevels().stream().map(LogLevel::getLevel).filter(isLogLevelEnabled)
                     .forEach(level -> log.log(level,logMessage.getMessage()));
+            handlerType.close();
         }
     }
 
     private Handler getHandlerType() {
         try {
-            Handler handler = new FileHandler();
+            Handler handler = new FileHandler(this.loggingFile,true);
             handler.setFormatter(new SimpleFormatter());
             return handler;
         } catch (IOException e) {

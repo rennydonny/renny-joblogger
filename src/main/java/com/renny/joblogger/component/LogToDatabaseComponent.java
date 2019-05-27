@@ -11,9 +11,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.function.Predicate;
 
-/**
- * Created by renrodriguez on 5/3/2016.
- */
 @Component("logToDatabaseComponent")
 @Log
 @RequiredArgsConstructor

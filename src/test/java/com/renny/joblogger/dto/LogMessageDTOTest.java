@@ -8,7 +8,7 @@ import java.util.logging.Level;
 
 public class LogMessageDTOTest {
     @Test
-    public void personShouldBeCreated() {
+    public void messageDtoShouldBeCreated() {
         LogMessageDTO dto = new LogMessageDTO("HELLO WORLD!", LogLevel.ERROR);
         Assertions.assertThat(dto.getMessage()).isEqualToIgnoringCase("HELLO WORLD!");
         Assertions.assertThat(dto.getLevel()).isInstanceOf(LogLevel.class);

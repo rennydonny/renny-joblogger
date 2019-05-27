@@ -3,14 +3,12 @@ package com.renny.joblogger.component;
 import com.renny.joblogger.model.LogOutputType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by renrodriguez on 5/3/2016.
- */
 @Component
 public class OutputLoggerFactory {
     private Map<LogOutputType, LogOutputComponent> map = new HashMap<>();

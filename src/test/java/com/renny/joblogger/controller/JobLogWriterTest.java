@@ -26,7 +26,7 @@ public class JobLogWriterTest {
     private JobLoggerService service;
 
     @Test
-    public void writeLogShouldBeOk() throws Exception {
+    public void hitWriteLogEndpointShouldBeOk() throws Exception {
         LogMessageDTO dto = new LogMessageDTO("HELLO WORLD!", LogLevel.ERROR);
         this.mockMvc.perform(MockMvcRequestBuilders.post("/log")
                 .contentType(MediaType.APPLICATION_JSON_UTF8)

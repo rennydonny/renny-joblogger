@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.Optional;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
@@ -19,7 +19,7 @@ public class LoggerRepositoryTest {
     @Test
     public void saveIsOk() {
         this.repository.save(new LoggerEntity(null,"1,HOLA MUNDO","com.renny.joblogger.component.LogToDatabaseComponent"));
-        Optional<LoggerEntity> byId = this.repository.findById(1L);
-        Assertions.assertThat(byId.isPresent()).isTrue();
+        List<LoggerEntity> all = this.repository.findAll();
+        Assertions.assertThat(all.size()).isGreaterThan(0);
     }
 }

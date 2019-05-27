@@ -14,11 +14,12 @@ public class JobLoggerServiceImpl implements JobLoggerService{
     private final LoggerProperties loggerProperties;
     private final OutputLoggerFactory outputLoggerFactory;
 
-    public void write(LogMessageDTO message){
+    public boolean write(LogMessageDTO message){
         boolean isEmpty = this.loggerProperties.getLevels().isEmpty() || this.loggerProperties.getOutputs().isEmpty();
         if(isEmpty){throw new IllegalArgumentException("Log level and output must be set");}
         log.info(String.format("Writing just %s log levels on %s",this.loggerProperties.getLevels(),this.loggerProperties.getOutputs()));
         this.loggerProperties.getOutputs().stream().map(this.outputLoggerFactory::getLogOutputComponent)
                 .forEach(logOutputComponent -> logOutputComponent.push(message));
+        return true;
     }
 }

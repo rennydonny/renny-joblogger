@@ -10,9 +10,6 @@ import org.springframework.stereotype.Component;
 import java.util.function.Predicate;
 import java.util.logging.*;
 
-/**
- * Created by renrodriguez on 5/3/2016.
- */
 @Component("logToConsoleComponent")
 @Log
 @RequiredArgsConstructor
