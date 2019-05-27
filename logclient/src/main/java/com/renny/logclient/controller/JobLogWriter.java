@@ -1,4 +1,4 @@
-package com.renny.joblogger.controller;
+package com.renny.logclient.controller;
 
 import com.renny.joblogger.api.JobLoggerService;
 import com.renny.joblogger.dto.LogMessageDTO;
