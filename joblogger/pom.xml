@@ -16,6 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <mvn.compiler.plugin>3.8.0</mvn.compiler.plugin>
     </properties>
 
     <dependencies>
@@ -53,8 +54,13 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${mvn.compiler.plugin}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
             </plugin>
         </plugins>
     </build>
