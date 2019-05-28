@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by renrodriguez on 5/3/2016.
@@ -13,7 +14,8 @@ import javax.persistence.*;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class LoggerEntity {
+public class LoggerEntity implements Serializable {
+    private static final long serialVersionUID = 1511839872397064866L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

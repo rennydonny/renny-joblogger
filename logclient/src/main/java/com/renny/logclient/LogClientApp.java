@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Import;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.renny.logclient","com.renny.joblogger"})
 @Import(value = {JobLoggerApp.class})
 @EnableConfigurationProperties(value = {LoggerProperties.class})
 public class LogClientApp {
