@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 public class JobLogWriter {
     private final JobLoggerService loggerService;
 
-    @PostMapping
+    @PostMapping(value = "")
     @ResponseStatus(HttpStatus.CREATED)
     public void add(@RequestBody LogMessageDTO message){
         log.info(String.format("Log message received %s",message.toString()));
